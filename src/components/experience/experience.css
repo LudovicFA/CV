@@ -1,0 +1,32 @@
+.list_experiences{
+  display: flex;
+  flex-direction: column;
+}
+
+.experience{
+  width: 500px;
+  border: 2px solid red;
+  margin: 10px 10px;
+}
+.experience:nth-child(even) {
+  align-self: flex-end;
+}
+.experience .dot{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  border-radius: 15px;
+  position: relative;
+
+}
+.experience:nth-child(odd) .dot{
+  left: 300px;
+}
+.experience:nth-child(even) .dot{
+  right: 300px;
+}
+
+
+.details .overline{
+  background-color: yellow;
+}
