@@ -8,17 +8,17 @@ class Competences extends React.Component {
  }
 
   render() {
-    /*var tabDetails = [];
+    var tabDetails = [];
     for (var i = 0; i < this.props.competences.length; i++) {
       tabDetails.push(
-          <span className={(this.props.competences[i].important ? 'overline' : 'normal')}>#{ this.props.competences[i].content }</span>
+          <span className={(this.props.competences[i].important ? 'overline' : 'normal')}>#{ this.props.competences[i].content }</span> 
       );
-    }*/
+    }
 
 
     return (
       <div className="list_competences">
-        aaaa
+        { tabDetails }
       </div>
     );
   }

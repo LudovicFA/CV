@@ -1,4 +1,40 @@
-header{
-   display: flex;
-   flex-direction: row;
+header {
+  display: flex;
+  flex-direction: row;
+  background-color: #092140
+}
+
+.shadow {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+#header h1 {
+  font-weight: 400;
+  margin-top: 75px;
+  font-size: 2em;
+  color: #ffffff;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+#header h4 {
+  margin-top: -25px;
+  font-size: 1.2em;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 110px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.29);
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+.text-center {
+    text-align: center;
+}
+*
+
+#header #intro {
+  width: 1100px;
+  margin: 0px auto;
 }
