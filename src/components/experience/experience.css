@@ -33,26 +33,95 @@
 
 .experience{
   max-width: 450px;
-  /*height: 200px;*/
   margin: 90px;
   margin-top: 45px;
   margin-bottom: 45px;
-  box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
-  text-overflow: ellipsis;
-  border:2px solid #024959;
-  border-radius: 5px;
+  text-align: left;
 }
 .experience .exp_header{
-  display: flex;
   height: 40px;
-  line-height: 40px;
   text-align: center;
   position: relative;
-  border-bottom: 2px solid #024959
+}
+
+
+.experience {
+  flex: 1 1 50%;
+  position: relative;
+  border: 1px solid #efefef;
+  box-shadow: 2px 6px 25px rgba(0, 0, 0, 0.1);
+  transition: all .3s ease;
+  position: relative;
+}
+.experience:hover {
+  box-shadow: 2px 6px 30px rgba(0, 0, 0, 0.2);
+}
+.experience a {
+  color: #E76C67;
+  text-decoration: none;
+}
+.experience_content {
+  padding: 30px 30px 30px;
+}
+.experience h1 {
+  margin: 0;
+}
+
+.experience p {
+  margin: 0;
+  border-bottom: 1px solid #efefef;
+  
+}
+
+.subtitle {
+  margin: 0 0 15px;
+  font-weight: 700;
+  margin: 0 0 15px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #E76C67;
+}
+
+
+.experience_details {
+  /*position: absolute;*/
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.experience_details_inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 30px;
+  padding: 30px 0;
+}
+
+.experience_details .button {
+  display: block;
+  font-size: 1rem;
+  background: #E76C67;
+  border: 1px solid #E76C67;
+  padding: .75rem 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  text-align: center;
+}
+
+.experience_details .button:hover,
+.experience_details .button:focus {
+  background: darken(#E76C67, 10%);
+  border: 1px solid darken(#E76C67, 10%);
+}
+.experience_details .list_competences {
+  color: #666666;
+  font-size: 0.95rem;
 }
 
 /* PUCE LE LONG DE LA TIMELINE */
-.experience .exp_header::before{
+.experience .experience_content::before{
   position: absolute;
   content: "";
   width: 9px;
@@ -62,34 +131,35 @@
   box-shadow: 0px 0px 2px 8px #f7f7f7;
   top:10px;
 }
-.timeline_left .experience .exp_header::before{
+.timeline_left .experience .experience_content::before{
   left: 490.5px;
 }
-.timeline_right .experience .exp_header::before{
+.timeline_right .experience .experience_content::before{
   left: -95.5px;
 }
 /* FLECHE QUI POINTE VERS LA TIMELINE */
-.timeline_left .experience .exp_header::after{
+.timeline_left .experience .experience_content::after{
   border-left-width: 15px;
   border-left-style: solid;
   left: 100%;
 }
-.timeline_right .experience .exp_header::after{
+.timeline_right .experience .experience_content::after{
   border-right-width: 15px;
   border-right-style: solid;
   left: -15px;
 }
-.experience .exp_header::after{
+.experience .experience_content::after{
   position: absolute;
   content: "";
   width: 0;
   height: 0;
+  top: 0%;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
 }
 
 
-.exp_header .societe{
+/*.exp_header .societe{
   font-weight: bold;
   text-transform: capitalize;
   font-size: 20px;
@@ -100,3 +170,14 @@
   width: 40%;
 }
 
+.timeline_left .exp_header .societe{
+  border-right: 2px solid #024959
+}
+.timeline_right .exp_header .societe{
+  border-left: 2px solid #024959
+}
+.exp_projet .projet{
+  display: block;
+  font-weight: bold;
+  border-bottom: 1px solid #024959;
+}*/

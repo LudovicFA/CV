@@ -2,77 +2,51 @@ import React, { Component } from 'react';
 import './experience.css';
 import Details from './details';
 import Competences from './competences';
+import Popup from '../popup/popup';
 
 class Experience extends React.Component {
 
   constructor(props) {
-   super(props);
+    super(props);
+    this.state = {
+      showContent: false 
+    };
+  }
 
- }
+  onClick = () =>  {
+    this.setState({
+      showContent: !this.state.showContent
+    })
+  }
 
 
   render() {
-    var tabExpLeft = [];
-    var tabExpRight = [];
-    for (var i = 0; i < this.props.experiences.length; i++) {
-      var dateelemnt;
-      if(this.props.experiences[i].fin){
-        dateelemnt = <div className="date">du { this.props.experiences[i].debut} au { this.props.experiences[i].fin}</div>
-      }
-      else {
-        dateelemnt = <div className="date">{ this.props.experiences[i].debut}</div>
-      }
-      if(i % 2 === 0){
-        tabExpLeft.push(
-          <div className="experience">
-            <div className="exp_header">
-                <div className="societe">{ this.props.experiences[i].societe}</div>
-                {dateelemnt}
-              </div>
-            
-            <div className="exp_projet">
-              <span className="projet">{ this.props.experiences[i].projet}</span>
-              <span className="introduction">{ this.props.experiences[i].introduction}</span>
-            </div>
-            <div className="exp_details">
-              <Details details={this.props.experiences[i].details} />
-            </div>
-            <div className="exp_competences">
-              <Competences competences={this.props.experiences[i].competences} />
-            </div>
-          </div>
-      );  
-      }
-      else{
-        tabExpRight.push(
-          <div className="experience">
-            <div className="exp_header">
-                {dateelemnt}
-                <div className="societe">{ this.props.experiences[i].societe}</div>
-            </div>
-            
-            <div className="exp_projet">
-              <span className="projet">{ this.props.experiences[i].projet}</span>
-              <span className="introduction">{ this.props.experiences[i].introduction}</span>
-            </div>
-            <div className="exp_details">
-              <Details details={this.props.experiences[i].details} />
-            </div>
-            <div className="exp_competences">
-              <Competences competences={this.props.experiences[i].competences} />
-            </div>
-          </div>
-      );
-      }
-      
+    var dateelemnt;
+    if(this.props.experience.fin){
+      dateelemnt = <span className="date">du { this.props.experience.debut} au { this.props.experience.fin}</span>
     }
-
-    return (
-      <div className="timeline">
-          <div className="timeline_left">{tabExpLeft}</div>
-          <div className="timeline_right">{tabExpRight}</div>
-      </div>
-    );
+    else {
+      dateelemnt = <span className="date">{ this.props.experience.debut}</span>
+    }
+    const exp = <div className="experience" >
+                  <div className="experience_content">
+                      <h1>{ this.props.experience.projet}</h1>
+                      <div className="subtitle">
+                        { this.props.experience.societe} - {dateelemnt}
+                      </div>
+                      <p>
+                        { this.props.experience.introduction}
+                      </p>
+                      { this.state.showContent ? <Details details={this.props.experience.details} /> : null }
+                    <div className="experience_details">
+                      <div className="experience_details_inner">
+                        <Competences competences={this.props.experience.competences} important={true} />
+                      </div>
+                      <a className="button"  onClick={this.onClick}>Détails</a>
+                    </div>
+                  </div>
+                </div>
+    return (exp);
   }
 }
 

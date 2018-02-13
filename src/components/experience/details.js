@@ -4,16 +4,9 @@ class Details extends React.Component {
 
   constructor(props) {
    super(props);
-   this.state = {
-      isHidden: true
-    }
+  
  }
- toggleHidden () {
-     this.setState({
-       isHidden: !this.state.isHidden
-     })
-   }
-
+ 
 
   render() {
     var tabDetails = [];
@@ -24,15 +17,11 @@ class Details extends React.Component {
       );
     }
 
-    if(!this.state.isHidden){
-      content = <ul className="list_details">
-        {tabDetails}
-      </ul>;
-    }
-
+    content = <ul className="list_details">
+                {tabDetails}
+              </ul>;
     return (
       <div>
-        <a href="#" onClick={this.toggleHidden.bind(this)}> More ... </a>
         { content }
       </div>
     );
